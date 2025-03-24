@@ -5,9 +5,31 @@
 
 -Respuesta:
 
+Su función principal es la de procesar el código fuente antes de que pase al compilador através directivas que permiten incluir archivos, definir macros o realizar compilación condicional.  
+
+- **Inclusión de archivos (`#include`)**  
+   Agrega el contenido de otros archivos en el código fuente antes de la compilación.  
+
+- **Definición de macros (`#define`)**  
+   Crea constantes o macros que reemplazan texto en el código antes de su compilación.  
+
+- **Compilación condicional (`#ifdef`, `#ifndef`, `#if`, `#elif`, `#else`, `#endif`)**  
+   Incluye o excluye fragmentos de código en función de ciertas condiciones predefinidas.  
+
+- **Inclusión de código una sola vez (`#pragma once` o `#ifndef`)**  
+   Evita la inclusión repetida de un mismo archivo de encabezado en el código fuente.  
+
+- **Sustitución de texto (`#undef`)**  
+   Elimina la definición de una macro previamente establecida en el código.  
+
+- **Mensajes y errores (`#error` y `#pragma message`)**  
+   Genera advertencias o errores durante la precompilación para alertar sobre problemas específicos.
+
+
 2. ¿Por qué se dice que el **código objeto** (.o) no es directamente ejecutable?
 
 -Respuesta:
+
 El código objeto (.o) no es directamente ejecutable porque aún está incompleto.
 
 Cuando se compila en C, este lo que hace es traducir cada archivo fuente (.c) a su equivalente en lenguaje de máquina, generando así archivos .o. Sin embargo, estos archivos pueden contener referencias a funciones o variables que están en otros archivos o bibliotecas, pero que aún no han sido conectadas por lo que sin esto no podría estar completo para ser un ejecutable.
@@ -24,12 +46,14 @@ Cuando se compila en C, este lo que hace es traducir cada archivo fuente (.c) a 
 4. ¿Para qué sirve la opción `S` en GCC?
 
 -Respuesta:
+
 La opción -s en GCC es la que ayuda a generar el código ensamblador (.s) a partir del código fuente en C, sin ensamblarlo ni enlazarlo.
 
 
 5. ¿Qué sucede si omitimos la etapa de **linker**?
 
 -Respuesta:
+
 Si omitimos el linker, el código objeto (.o) no podrá convertirse en un programa ejecutable, porque para generar un ejecutable, el linker debe unir todos los archivos objeto y resuelver referencias externas.
 
 
